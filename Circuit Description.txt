@@ -1,0 +1,34 @@
+How it Works!
+OhmMeter.pfd is the circuit diagram
+Items needed for this project.
+1. Arduino Uno
+2. 6 x BS170 FET's (Approx £2.50 for 5) These are used as they have a very low resistance when turned on ~2 Ohms.
+3. 6 x 150K 1/4W Resistors.
+4. 1 each of:-
+  390 Ohm Resistor
+  3.9K Ohm Resistor
+  33K Ohm Resistor
+  390K Ohm Resistor
+  1M Ohm Resistor
+  10M Ohm Resistor
+5. LCD Display
+
+The circuit starts by turning on TR1 and taking a reading on A0 (the Uno is using the default reference voltage 5V)
+A reading is taken on A0, this value will be between 0 and 1023, this is then multiplied by the value BitVal which is
+derived by dividing the 5V supply by 1024 which is the resolution of the analogue port = 0.0048828125 V/bit.
+This will give us the voltage across R-Test.
+Knowing this voltage we subtract it from the 5V supply, we now know the voltage across R1.
+Because we know the value of R1 and now the voltage across it, we can calculate the current through the circuit of
+R1->TR1->R-Test.
+Using Ohms Law I = V/R
+The current I is the same for the whole circuit.
+We already know the voltage across R-Test, so again using Ohms Law.
+R-Test = V-Test/I
+We now know the value of R-Test or we know T-Test is > R1/2.
+If the value returned is > R1/2, TR1 is turned off and TR2 is turned on.
+The same process occurs, again we will know the value of R-Test or it will be > R2/2.
+This process repeats using TR3, TR4, TR5 and TR6 until we have a valid reading.
+If the result is still > R6/2 then the display will read "Out of Limits", you get this same display if there
+is no test resistor fitted (Open Circuit).
+On very low resistors, you need to take into account the ~2 Ohm resistance of the FET, other than this, the 2 Ohms has
+little effect on any readings.
