@@ -24,7 +24,7 @@ Using Ohms Law I = V/R
 The current I is the same for the whole circuit.
 We already know the voltage across R-Test, so again using Ohms Law.
 R-Test = V-Test/I
-We now know the value of R-Test or we know T-Test is > R1/2.
+We now know the value of R-Test or we know R-Test is > R1/2.
 If the value returned is > R1/2, TR1 is turned off and TR2 is turned on.
 The same process occurs, again we will know the value of R-Test or it will be > R2/2.
 This process repeats using TR3, TR4, TR5 and TR6 until we have a valid reading.
