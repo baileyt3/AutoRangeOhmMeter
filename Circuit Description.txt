@@ -12,6 +12,8 @@ Items needed for this project.
   1M Ohm Resistor
   10M Ohm Resistor
 5. LCD Display
+6. 1 x Breadboard
+7. Misc Breadboard wire connectors
 
 The circuit starts by turning on TR1 and taking a reading on A0 (the Uno is using the default reference voltage 5V)
 A reading is taken on A0, this value will be between 0 and 1023, this is then multiplied by the value BitVal which is
